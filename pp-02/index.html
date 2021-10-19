@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="screen.css" />
 </head>
 <body>
-  <h1><a href="http://example.com/index.html" rel="home">HTML Antipatterns</a></h1>
+  <h1><a href="/">HTML Antipatterns</a></h1>
   <header id="header">
     <nav id="navigation">
       <ul>
@@ -20,9 +20,11 @@
   </header>
   <main id="content">
     <article id="primary" class="green-background">
-      <h2><b>About Me</b></h2>
-      <h3><i>3rd-Year ITM Undergraduate</i></h3>
-      <h4>Majoring in Cybersecurity</h4>
+      <h2>About Me</h2>
+      <ul id="about-me-details">
+        <li id="about-me-occupation">3rd-Year ITM Undergraduate</li>
+        <li id="about-me-major">Majoring in Cybersecurity</li>
+      </ul>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ullamcorper risus eget magna
         suscipit, in blandit mauris aliquam. Donec ac elementum libero. Maecenas sit amet leo
@@ -41,10 +43,9 @@
     </article>
   </main>
   <aside id="supporting">
-    <h2>Facts About Me</h2>
+    <h2>Quick Facts About Me</h2>
     <!--Hint: Don't repeat classes on all inner elements that share a common parent-->
     <ul>
-      <li class="quick-facts"><p><b> Quick Facts:</b></p></li>
       <li class="quick-facts">Interested in cybersecurity</li>
       <li class="quick-facts">Hate cold winters</li>
       <li class="quick-facts">Always running late</li>
