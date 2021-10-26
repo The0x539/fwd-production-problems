@@ -40,7 +40,25 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
 }
 
 @media screen and (min-width: 600px) {
+  #content {
+    flex-direction: row-reverse;
+    flex-wrap: wrap-reverse;
+  }
 
+  #three,
+  #two,
+  #one {
+    flex-grow: 1;
+    flex-shrink: 0;
+    height: 50vw;
+    width: 50vw;
+  }
+
+  /* Is this supposed to be *possible* without individual properties? */
+  #three {
+    width: 100vw;
+    height: 100vw;
+  }
 }
 
 @media screen and (min-width: 800px) {
