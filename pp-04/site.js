@@ -10,6 +10,18 @@
   var x = 5;
 
   function double(num) {
+    if (typeof(num) !== 'number') {
+      if (!isNaN(+num)) {
+        /* if a conversion is possible, do it silently */
+        num = +num;
+      } else {
+        /* otherwise, complain */
+        console.log('double takes a number, but you passed a ' + typeof(num) + ': ' + String(num))
+        return null;
+      }
+      /* that counds as "some reasonable way", right? */
+    }
+
     var x = num * 2;
     return x;
   }
@@ -18,6 +30,8 @@
   console.log('The value of x is', x, '-- it should be 5.');
 
   console.log('The DOUBLED value of x, however, is ' + double(x) + '.');
+  console.log('This should be fourteen:', double('7'));
+  console.log('And this should have already printed an error and returned null:', double('seven'))
 
   /*
     Step 2. Rewrite the JavaScript `double()` function above so that
