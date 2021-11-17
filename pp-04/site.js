@@ -4,26 +4,36 @@
   `x` as the variable inside the function, however.
 */
 
-x = 5;
+'use strict';
 
-function double(num) {
-  var x = num * 2;
-  return x;
+(function() {
+  var x = 5;
+
+  function double(num) {
+    var x = num * 2;
+    return x;
+  }
+
+  double(6);
+  console.log('The value of x is', x, '-- it should be 5.');
+
+  console.log('The DOUBLED value of x, however, is ' + double(x) + '.');
+
+  /*
+    Step 2. Rewrite the JavaScript `double()` function above so that
+    it does not pollute the global namespace: that is, neither its
+    variables nor the `double()` function itself can be accessed
+    directly via the global `window` object, like `window.x`).
+
+    Be sure to comment out the original `double()` function so you
+    can accurately test your work.
+  */
+})();
+
+if (window.double != undefined) {
+  console.log('oh no, double is visible in the global scope!');
 }
-
-double(6);
-console.log('The value of x is', x, '-- it should be 5.');
-
-/*
-  Step 2. Rewrite the JavaScript `double()` function above so that
-  it does not pollute the global namespace: that is, neither its
-  variables nor the `double()` function itself can be accessed
-  directly via the global `window` object, like `window.x`).
-
-  Be sure to comment out the original `double()` function so you
-  can accurately test your work.
-*/
-
+/* see? it's not. */
 
 /*
   Step 3. Rewrite your corrected `double()` function from Step 2.
